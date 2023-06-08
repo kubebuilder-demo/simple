@@ -1,0 +1,27 @@
+# permissions for end users to view simples.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: simple-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: simple
+    app.kubernetes.io/part-of: simple
+    app.kubernetes.io/managed-by: kustomize
+  name: simple-viewer-role
+rules:
+- apiGroups:
+  - kubebuilder-demo.github.com
+  resources:
+  - simples
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - kubebuilder-demo.github.com
+  resources:
+  - simples/status
+  verbs:
+  - get

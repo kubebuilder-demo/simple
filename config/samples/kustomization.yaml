@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- kubebuilder-demo_v1_simple.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

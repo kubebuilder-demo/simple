@@ -1,0 +1,13 @@
+apiVersion: kubebuilder-demo.github.com/v1
+kind: Simple
+metadata:
+  labels:
+    app.kubernetes.io/name: simple
+    app.kubernetes.io/instance: simple-sample
+    app.kubernetes.io/part-of: simple
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: simple
+  name: simple-sample
+spec:
+  # TODO(user): Add fields here
+  foo: ddl3

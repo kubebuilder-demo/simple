@@ -1,0 +1,31 @@
+# permissions for end users to edit plays.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: play-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: simple
+    app.kubernetes.io/part-of: simple
+    app.kubernetes.io/managed-by: kustomize
+  name: play-editor-role
+rules:
+- apiGroups:
+  - kubebuilder-demo.github.com
+  resources:
+  - plays
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kubebuilder-demo.github.com
+  resources:
+  - plays/status
+  verbs:
+  - get
